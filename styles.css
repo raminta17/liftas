@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.f1 {
+    flex:1;
+}
+.f4{
+    flex:4;
+}
+.building {
+    height: 600px;
+}
+.building, .lift {
+    border: 1px solid black;
+}
+.floor{
+    border-bottom: 3px solid black;
+    height: 300px;
+    position: relative;
+}
+.floorBtn {
+    border: 3px solid black;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.floorBtn:hover {
+    background-color: yellow;
+}
+.liftBox {
+    position: relative;
+}
+.lift {
+    position: absolute;
+    height: 150px;
+    width:100%;
+    transition: 0.3s linear ease-in-out;
+    bottom: 0;
+}
+.liftDoor {
+    width:50%;
+    height: 100%;
+    background-color: lightgray;
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+.lift:hover .liftDoor {
+    width: 0;
+}
+.person {
+    width: 20px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    transition: 0.3s ease-in-out;
+    background-color: #75b798;
+}
+.person:hover{
+    transform: translatex(120px);
+    z-index: 3;
+}

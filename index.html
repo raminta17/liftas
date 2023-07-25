@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>liftas</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-
+<div class="d-flex p-5">
+    <div class="f4 building d-flex">
+        <div class="f4 floors d-flex flex-column m-3">
+            <div class="f1 floor ">
+                <div>FLOOR 3</div>
+            </div>
+            <div class="f1 floor">
+                <div>FLOOR 2</div>
+            </div>
+            <div class="f1 floor ">
+                <div>FLOOR 1</div>
+                <div class="person">3</div>
+            </div>
+        </div>
+        <div class=" f1 liftBox m-3">
+            <div class="lift d-flex justify-content-between">
+                <div class="liftDoor"></div>
+                <div class="liftDoor"></div>
+            </div>
+        </div>
+    </div>
+    <div class="f1 floorBtnsCont d-flex flex-column justify-content-end">
+        <div class="floorBtn m-3 d-flex justify-content-center align-items-center">3</div>
+        <div class="floorBtn m-3 d-flex justify-content-center align-items-center">2</div>
+        <div class="floorBtn m-3 d-flex justify-content-center align-items-center">1</div>
+    </div>
+</div>
 </body>
 </html>
