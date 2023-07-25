@@ -1,21 +1,23 @@
 const floorBtns = document.querySelectorAll('.floorBtn');
 const floors = document.querySelectorAll('.floor');
 const lift = document.querySelector('.lift');
+const liftCont = document.querySelector('.liftBox');
 const liftDoors = document.querySelectorAll('.liftDoor');
-let person = null;
 
 
+generateNewPerson();
+const person = document.querySelector('.person');
+const personMessage = document.querySelector('.personMessage');
 floorBtns.forEach(floorBtn => {
     floorBtn.onclick = () => {
-        const person = document.querySelector('.person');
-        const personMessage = document.querySelector('.personMessage');
+
         let floorIndex = floorBtn.textContent-1;
         if(person.classList.contains('inElevator')){
             console.log('person in elevator');
             person.style.transition= '1s ease-in';
             personMessage.style.transition= '1s ease-in';
             person.style.bottom = 190 * floorIndex + 'px';
-            personMessage.style.bottom = 190 * floorIndex + 'px';
+            personMessage.style.bottom = 110 + 190 * floorIndex + 'px';
             let personGoesOut = setTimeout(personGoesOutOfElevator, 2000);
         }else {
             let personGoesToElevator = setTimeout(personMoveToElevator,2000);
@@ -41,8 +43,6 @@ function closeElevatorDoors(){
     })
 }
 function personMoveToElevator(){
-    const person = document.querySelector('.person');
-    const personMessage = document.querySelector('.personMessage');
     person.style.transition = '1s ease-in';
     person.style.transform = 'translateX(170px)';
     personMessage.style.transition = '1s ease-in';
@@ -50,8 +50,6 @@ function personMoveToElevator(){
     person.classList.add('inElevator');
 }
 function personGoesOutOfElevator(){
-    const person = document.querySelector('.person');
-    const personMessage = document.querySelector('.personMessage');
     person.style.transition = '1s ease-in';
     person.style.transform = 'translateX(0)';
     personMessage.style.transition = '1s ease-in';
@@ -71,7 +69,7 @@ function generateNewPerson(){
     personAsksForRandomFloor.style.bottom = 110 + 190 * randomFloorForPersonToAppear + 'px';
     console.log('randomFloorForPersonToAppear ', randomFloorForPersonToAppear);
     console.log('randomFloorRequest ', randomFloorRequest);
-    lift.append(person, personAsksForRandomFloor);
+    liftCont.append(person, personAsksForRandomFloor);
 }
 
-generateNewPerson();
+
