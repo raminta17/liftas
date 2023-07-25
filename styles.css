@@ -11,6 +11,7 @@
 }
 .building {
     height: 600px;
+    position: relative;
 }
 .building, .lift {
     border: 1px solid black;
@@ -49,23 +50,27 @@
     border: 1px solid black;
     transition: 0.3s ease-in-out;
 }
-.lift:hover .liftDoor {
-    width: 0;
-}
+/*.lift:hover .liftDoor {*/
+/*    width: 0;*/
+/*}*/
 .person {
-    width: 20px;
-    height: 50px;
-    border: 1px solid black;
+    width: 150px;
+    height:150px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    transition: 0.3s ease-in-out;
-    background-color: #75b798;
+    right: 150px;
+    /*bottom: 5px;*/
+    transition: 1s ease-in;
 }
-.person:hover{
-    transform: translatex(120px);
-    z-index: 3;
+.personMessage {
+    transition: 1s ease-in;
+    position: absolute;
+    right: 240px;
+    /*bottom: 220px;*/
 }
+/*.person:hover{*/
+/*    transform: translatex(140px);*/
+/*    z-index: 3;*/
+/*}*/
