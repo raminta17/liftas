@@ -51,7 +51,7 @@
     transition: 0.3s ease-in-out;
     z-index: 2;
 }
-.person {
+#person {
     width: 150px;
     height:150px;
     display: flex;
@@ -61,7 +61,7 @@
     right: 150px;
     transition: 1s ease-in;
 }
-.personMessage {
+#personMessage {
     transition: 1s ease-in;
     position: absolute;
     right: 240px;
