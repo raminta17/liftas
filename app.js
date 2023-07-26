@@ -15,7 +15,6 @@ floorBtns.forEach((floorBtn, floorBtnIndex) => {
     floorBtn.onclick = () => {
         const person = document.querySelector('#person');
         const personMessage = document.querySelector('#personMessage');
-        console.log(person.classList);
         let floorIndex = floorBtn.textContent - 1;
         if (person.classList.contains('inElevator')) {
             person.style.transition = '1s ease-in';
@@ -23,17 +22,17 @@ floorBtns.forEach((floorBtn, floorBtnIndex) => {
             person.style.bottom = 190 * floorIndex + 'px';
             personMessage.style.bottom = 110 + 190 * floorIndex + 'px';
             if (Number(personMessage.textContent) === floorIndex + 1) {
-                let personGoesOut = setTimeout(personGoesOutOfElevator, 2000);
+                setTimeout(personGoesOutOfElevator, 2000);
                 person.classList.remove('inElevator');
-                let removePersonAddNew = setTimeout(removePersonAndAddNew, 4000);
+                setTimeout(removePersonAndAddNew, 5000);
             }
         } else {
-            let personGoesToElevator = setTimeout(personMoveToElevator, 2000);
+            setTimeout(personMoveToElevator, 2000);
         }
         lift.style.transition = '1s ease-in';
         lift.style.bottom = 190 * floorIndex + 'px';
-        let openDoors = setTimeout(openElevatorDoors, 1000);
-        let closeDoors = setTimeout(closeElevatorDoors, 3000);
+        setTimeout(openElevatorDoors, 1000);
+        setTimeout(closeElevatorDoors, 3000);
     }
 })
  // ------------------------------------- functions ------------------------------------------------------
@@ -66,10 +65,11 @@ function personMoveToElevator() { // animation for person moving to of the eleva
 function personGoesOutOfElevator() { // animation for person moving out of the elevator
     const person = document.querySelector('#person');
     const personMessage = document.querySelector('#personMessage');
-    person.style.transition = '1s ease-in';
-    person.style.transform = 'translateX(0)';
-    personMessage.style.transition = '1s ease-in';
-    personMessage.style.transform = 'translateX(0)';
+    personMessage.textContent = 'Thx';
+    person.style.transition = '4s ease-in';
+    person.style.transform = 'translateX(-1200px)';
+    personMessage.style.transition = '4s ease-in';
+    personMessage.style.transform = 'translateX(-1200px)';
 }
 function removePersonAndAddNew() { // remove person after arriving to correct floor and generating new person in random floor
     const person = document.querySelector('#person');
@@ -85,13 +85,13 @@ function generateNewPerson() { // generating new person to apear in random floor
     const personNew = document.createElement('img');
     personNew.src = 'images-removebg-preview.png';
     personNew.id = 'person';
+    personNew.style.transition = '4s ease-in';
     const personAsksForRandomFloor = document.createElement('div');
     personAsksForRandomFloor.id = 'personMessage';
     personAsksForRandomFloor.textContent = randomFloorRequest;
+    personAsksForRandomFloor.style.transition = '4s ease-in';
     personNew.style.bottom = 190 * randomFloorForPersonToAppear + 'px';
     personAsksForRandomFloor.style.bottom = 110 + 190 * randomFloorForPersonToAppear + 'px';
-    console.log('randomFloorForPersonToAppear ', randomFloorForPersonToAppear);
-    console.log('randomFloorRequest ', randomFloorRequest);
     if (randomFloorForPersonToAppear + 1 === randomFloorRequest) { // security so person would appear in the floor with the same floor request
         generateNewPerson();
     } else {

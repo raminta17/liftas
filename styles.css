@@ -12,6 +12,8 @@
 .building {
     height: 600px;
     position: relative;
+    background-color: #d5c7c7;
+    overflow: hidden;
 }
 .building, .lift {
     border: 1px solid black;
@@ -42,6 +44,7 @@
     width:100%;
     transition: 0.3s linear ease-in-out;
     bottom: 0;
+    background-color: #777676;
 }
 .liftDoor {
     width:50%;
@@ -59,7 +62,6 @@
     justify-content: center;
     position: absolute;
     right: 150px;
-    transition: 1s ease-in;
 }
 #personMessage {
     transition: 1s ease-in;
