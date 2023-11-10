@@ -37,6 +37,7 @@
 }
 .liftBox {
     position: relative;
+    width: 150px;
 }
 .lift {
     position: absolute;
@@ -61,7 +62,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 150px;
+    right: 100%;
 }
 #personMessage {
     transition: 1s ease-in;
